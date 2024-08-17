@@ -1,25 +1,26 @@
 import { StatusBar } from 'expo-status-bar';
 import MapView , {Marker}from 'react-native-maps';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, View, Image } from 'react-native';
+
 
 const markers=[
   {
-    latitude: 37.78825,
-    longitude: -122.4324,
-    title: 'Local 1',
-    description: 'Descrição do local 1',
+    latitude: -23.54076145,
+    longitude: -46.4704928,
+    title: 'Shopping Metrô Itaquera',
+    description: 'Lugar onde faz compras',
   },
   {
-    latitude: -23.5527978,
-    longitude: -46.3990228,
-    title: "Local 2",
-    description: "Descrição do Local 2",
+    latitude: -22.96482965,
+    longitude: -43.22190379,
+    title: "Globo",
+    description: "Estudio de Televisão",
   },
   {
-    latitude: 48.8588897,
-    longitude: 2.32004102,
-    title: "Local 3",
-    description: "Descrição do Local 3",
+    latitude: 43.1561681,
+    longitude: -75.8449946,
+    title: "Nova Iorque",
+    description: "Cidade dos Estados Unidos",
   },
 ]
 
@@ -33,9 +34,8 @@ export default function App() {
         longitude: -122.4324,
         latitudeDelta: 0.0922,
         longitudeDelta: 0.0421,
-      }}/>
-
-      {markers.map((marker, index)=>(
+      }}>
+        {markers.map((marker, index)=>(
         <Marker
           key={index}
           coordinate={{latitude:marker.latitude, longitude:marker.longitude}}
@@ -43,6 +43,7 @@ export default function App() {
           description={marker.description}
         ></Marker>
       ))}
+      </MapView>
       
       <StatusBar style="auto" />
     </View>
